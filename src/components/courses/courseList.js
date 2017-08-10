@@ -21,8 +21,9 @@ var CourseList = React.createClass({
         var createCourseRow = function(course) {
             return (
                 <tr key={course.id}>
-                    <td><Link to="manageCourse" params={{id: course.id}}>{course.id}</Link> </td>
-                    <td>{course.title}</td>
+                    <td><a href={course.watchHref}>Watch Course</a></td>
+                    <td><a href="#">Delete Course</a></td>
+                    <td><Link to="manageCourse" params={{id: course.id}}>{course.title}</Link></td>
                     <td>{course.author.name}</td>
                     <td>{course.category}</td>
                     <td>{course.length}</td>
@@ -34,6 +35,7 @@ var CourseList = React.createClass({
             <div>
                 <table className="table">
                     <thead>
+                        <th></th>
                         <th></th>
                         <th>Title</th>
                         <th>Author</th>
